@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="js/yahooFinance.js"></script>
+  <script src="js/handlebars-v4.0.5.js"></script>  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body class="container">
+
+  <input type="text" id="symbol" />
+  <div id='price'>No Price</div>
+  <div id='time'></div>
+  <div id='change'></div>
+  <div id='percent-change'></div>
+  <img id='image'>
+  <button type="submit" onClick="getData();">Get Data</button>
+ 
+<script id="stock" type="text/x-handlebars-template">
+  <div class="container">
+    {{#grouped_each 3 this}}
+      <div class="row">
+        {{#each this}}
+        <div class="col-xs-6 col-sm-4 alphabet-letter-block">
+          <h1 class="letter-big">{{letter}}</h1>
+          <h1 class="letter-small">{{letter}}</h1>
+          <ul class="letter-list">
+            {{#each suggests}}
+                  <li>                
+                    <a class="suggest-url" href="http://www.google.com/search?q={{this}}">{{this}}</a>
+                    <img class="suggest-image-{{this}}"/>
+                  </li>
+            {{/each}}
+          </ul>
+        </div>
+        {{/each}}
+      </div>
+    {{/grouped_each}}
+  </div>
+</script>
+
+</body>
+</html>
