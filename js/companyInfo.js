@@ -34,11 +34,11 @@ getData = function(symbols) {
                       return 0;
                     });
 
-                    var source   = $("#stock").html();
-                    var template = Handlebars.compile(source);
+                    // var source   = $("#stock").html();
+                    // var template = Handlebars.compile(source);
 
-                    var html = template(results);
-                    $('body').append(html);
+                    // var html = template(results);
+                    // $('body').append(html);
                     console.log(results);
                 }
             })
