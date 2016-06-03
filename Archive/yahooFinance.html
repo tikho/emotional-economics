@@ -10,26 +10,23 @@
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body class="container">
-<!-- 
-  <input type="text" id="symbol" />
-  <div id='price'>No Price</div>
-  <div id='time'></div>
-  <div id='change'></div>
-  <div id='percent-change'></div>
-  <img id='image'>
-  <button type="submit" onClick="getData();">Get Data</button>
-  -->
+
 <script id="stock" type="text/x-handlebars-template">
   <div class="container">
     {{#grouped_each 3 this}}
       <div class="row">
         {{#each this}}
-        <div class="col-xs-6 col-sm-4">
-          {{#image Symbol Change}}{{/image}}       	
-	      <h1 class="name">{{Name}}</h1>
-	      <h1 class="symbol">{{Symbol}}</h1>
-	      <h1 class="time">{{LastTradeTime}}</h1>
-	      <h1 class="change">{{Change}}</h1>
+        <div class="col-md-4 companyInfo">
+          {{#image}}{{/image}} 
+          <div class="col-xs-8 col-sm-6">
+            <h4 class="name">{{Name}}</h3>
+            <h6 class="symbol">{{Symbol}}</h6>
+          </div>
+          <div class="col-xs-4 col-sm-6">    
+            <h4 class="bid">{{Bid}} {{change-sign}}<span class={{change-class}}> {{Change}}</span></h3>
+            <h6 class="time">{{LastTradeTime}}</h6>
+          </div>
+
         </div>
         {{/each}}
       </div>
