@@ -9,6 +9,10 @@
   margin-top: 50px;
 }
 
+.compareImage-container img {
+    vertical-align: bottom;
+}
+
 .time{
 	margin-top: -5px;
 }
@@ -29,3 +33,87 @@
 .change-still{
 	color: black;
 }
+
+a{
+	text-decoration: none;
+	border-bottom: 1px solid rgb(80,80,255);
+	padding-bottom:1px;
+	color: rgb(80, 80, 255);
+	transition: color 0.5s, border-bottom 0.5s;
+}
+
+a:hover{
+	text-decoration: none;
+	border-bottom: 1px solid red;
+	padding-bottom:1px;
+	color: red;
+	transition: color 0.0s, border-bottom 0.0s;
+}
+
+a:active{
+	text-decoration: none;
+	border-bottom: 1px solid darkred;
+	padding-bottom:1px;
+	color: darkred;
+}
+
+a:visited {
+	text-decoration: none;
+	border-bottom: 1px solid blueviolet;
+	padding-bottom:1px;
+    color: purple;
+}
+
+a:visited:hover {
+	text-decoration: none;
+	border-bottom: 1px solid red;
+	padding-bottom:1px;
+    color: red;
+}
+
+a:visited:active {
+	text-decoration: none;
+	border-bottom: 1px solid darkred;
+	padding-bottom:1px;
+    color: darkred;
+}
+
+.block-link{
+	/*display: inline-block;*/
+	border: none !important;
+}
+
+.block-link-text{
+	text-decoration: none;
+	border-bottom: 1px solid;
+	padding-bottom:1px;
+}
+
+
+
+
+.hidden {
+  display: none;
+  height: 0;
+}
+
+.visuallyhidden {
+  opacity: 0;
+  height: 0;
+}
+
+
+
+.companyInfo-container{
+    transition: all 0.2s ease-in-out;
+    height: auto;
+    display: block;
+}
+
+.index-container{
+    transition: all 0.2s ease-in-out;
+    height: auto;
+    display: block;
+}
+
+
