@@ -1,7 +1,39 @@
+<<<<<<< HEAD
 .company-image{
 	max-height: 200px;
 }
 
+=======
+.thumbnail{
+	max-height: 200px;
+}
+
+.company-image{
+	/*max-width: 50%;*/
+}
+
+.history-image{
+/*	max-height: 25px;
+	max-width: 25px;
+	margin: 0;*/
+}
+
+.history-container{
+	width: 80%;
+}
+
+.compareImage-container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+    position: relative;
+    height: 300px;
+}
+
+.compareImage-container img {
+    vertical-align: bottom;
+}
+
+>>>>>>> origin/master
 .companyInfo {
   display: block;
   margin-left: auto;
@@ -9,10 +41,13 @@
   margin-top: 50px;
 }
 
+<<<<<<< HEAD
 .compareImage-container img {
     vertical-align: bottom;
 }
 
+=======
+>>>>>>> origin/master
 .time{
 	margin-top: -5px;
 }
@@ -35,15 +70,21 @@
 }
 
 a{
+<<<<<<< HEAD
 	text-decoration: none;
 	border-bottom: 1px solid rgb(80,80,255);
 	padding-bottom:1px;
 	color: rgb(80, 80, 255);
 	transition: color 0.5s, border-bottom 0.5s;
+=======
+	border-bottom: 1px solid rgba(0, 68, 221, 0.2);
+	padding-top: 1px;
+>>>>>>> origin/master
 }
 
 a:hover{
 	text-decoration: none;
+<<<<<<< HEAD
 	border-bottom: 1px solid red;
 	padding-bottom:1px;
 	color: red;
@@ -87,11 +128,16 @@ a:visited:active {
 	text-decoration: none;
 	border-bottom: 1px solid;
 	padding-bottom:1px;
+=======
+>>>>>>> origin/master
 }
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 .hidden {
   display: none;
   height: 0;
@@ -115,5 +161,8 @@ a:visited:active {
     height: auto;
     display: block;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
