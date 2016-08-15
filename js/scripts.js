@@ -4,58 +4,28 @@ $(document).ready(function () {
 
     getIndexData(companiesSymbols);
 
-
-    // $("a[href~='#']").click(function() {
-    $("a").click(function() {
-        console.log("clicked");
-    });
-
-
 });
-
-// $(document).on('click',"a[href*='#']",function(event){
-//   event.preventDefault();
-//   var symbol = this.getAttribute('href');
-//   symbol = symbol.slice(1);//cut "#" sign
-//   getCompanyData(symbol);
-// });
 
 
 $(document).on('click',".block-link",function(event){
     event.preventDefault();
     var symbol = this.getAttribute('href');
-    getCompanyData(symbol);
 
-    var indexContainer = $('.index-container');
-    var companyInfoContainer = $('.companyInfo-container');
-
-    indexContainer.addClass('visuallyhidden');
-    indexContainer.one('transitionend', function(e) {
-      indexContainer.addClass('hidden');
-    });
-    companyInfoContainer.removeClass('hidden');
-    setTimeout(function () {
-      companyInfoContainer.removeClass('visuallyhidden');
-    }, 20);
-
-    processAjaxData("companyInfo", symbol);
+    showCompanyInfo(symbol);
 
 });
 
+function showCompanyInfo(symbol){
+    var indexContainer = $('.index-container');
+    var companyInfoContainer = $('.companyInfo-container');
+    var preloader = $('.preloader');
 
-processAjaxData = function(idName, urlPath){
-    var response = document.getElementById(idName);
-    var title = response.pageTitle;
-    document.title = title;
-    window.history.pushState({"html":response.html,"pageTitle":title},urlPath, urlPath);
-    console.log(window.history.state);
+    getCompanyData(symbol);
+    indexContainer.hide("fast");
+    preloader.fadeIn();
+    companyInfoContainer.show("fast");
+    window.history.pushState({symbol: symbol}, symbol, "/" + symbol);
 }
-
-// Revert to a previously saved state
-window.onpopstate = function(event) {
-    console.log("location: " + location.href + ", state: " + JSON.stringify(event.state));
-};
-
 
 getIndexData = function(symbols) {
 

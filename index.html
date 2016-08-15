@@ -2,16 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-<<<<<<< HEAD
   <title>emotional economics</title>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="js/handlebars-v4.0.5.js"></script>  
   <script src="js/scripts.js"></script>
-=======
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="js/handlebars-v4.0.5.js"></script>  
-  <script src="js/yahooFinance.js"></script>
->>>>>>> origin/master
   <script src="js/moment.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -19,7 +13,6 @@
 </head>
 <body class="container">
 
-<<<<<<< HEAD
   <div class="intro-container">
 
   </div>
@@ -28,20 +21,14 @@
 
   </div>
 
-  <div class="companyInfo-container" id="companyInfo">
+  <div class="preloader">
+  </div>
+
+  <div class="companyInfo-container">
 
   </div>
 
 </body>
-=======
-<div class="index-container">
-
-</div>
-
-<div class="companyInfo-container hidden visuallyhidden">
-
-</div>
->>>>>>> origin/master
 
 <script id="index" type="text/x-handlebars-template">
   <div class="container">
@@ -49,20 +36,13 @@
       <div class="row">
         {{#each this}}
         <div class="col-md-4 companyInfo">
-<<<<<<< HEAD
           <a class="block-link" href="{{Symbol}}">
-            {{#image}}{{/image}} 
+            {{#image thumbnail}}{{/image}} 
             <div class="col-xs-8 col-sm-6">
               <div class="block-link-text">
                 <h4 class="name">{{Name}}</h4>
                 <h6 class="symbol">{{Symbol}}</h6>
               </div>
-=======
-            <a href="#{{Symbol}}">{{#image thumbnail}}{{/image}}</a>
-            <div class="col-xs-8 col-sm-6">
-              <h4 class="name"><a href="#{{Symbol}}">{{Name}}</a></h4>
-              <h6 class="symbol"><a href="#{{Symbol}}">{{Symbol}}</a></h6>
->>>>>>> origin/master
             </div>
           </a>
           <div class="col-xs-4 col-sm-6">    
@@ -81,17 +61,10 @@
 <script id="companyInfo" type="text/x-handlebars-template">
 <div class="container">
   <div class="row">
-<<<<<<< HEAD
-    <div class="col-xs-12 col-md-8">
-      {{#image}}{{/image}}
-    </div>
-    <div class="col-xs-6 col-md-4">
-=======
     <div class="col-md-6">
       {{#image "company-image"}}{{/image}}
     </div>
     <div class="col-md-6">
->>>>>>> origin/master
       <h1 class="company-name">{{Name}}</h1>
       <h6 class="symbol">{{Symbol}}</h6>
       <h4 class="bid">{{Bid}} {{change-sign}}<span class={{change-class}}> {{Change}}</span></h4>
@@ -99,19 +72,6 @@
     </div>
   </div>
 
-<<<<<<< HEAD
-  <div class="compareImage-container text-center">
-    {{#compareMoodsImages}}{{/compareMoodsImages}}
-  </div>
-
-  {{#each this}}
-    {{#image}}{{/image}}
-    <p>Date:{{Date}} Open:{{Open}} Close:{{Close}}</p>
-  {{/each}}
-</div>
-</script>
-
-=======
   <div class="compareImage-container">
     {{#compareMoodsImages}}{{/compareMoodsImages}}
   </div>
@@ -131,5 +91,4 @@
 
 
 </body>
->>>>>>> origin/master
 </html>
