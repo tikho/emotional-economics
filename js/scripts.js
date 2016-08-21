@@ -10,21 +10,45 @@ $(document).ready(function () {
 $(document).on('click',".block-link",function(event){
     event.preventDefault();
     var symbol = this.getAttribute('href');
-
-    showCompanyInfo(symbol);
-
+    getCompanyData(symbol);
+    $('.index-container').removeClass('shown');
+    setTimeout(function(){
+        $('.preloader').fadeIn("fast").dequeue();
+        hideIndex();
+    }, 0);
 });
 
-function showCompanyInfo(symbol){
-    var indexContainer = $('.index-container');
-    var companyInfoContainer = $('.companyInfo-container');
-    var preloader = $('.preloader');
+$(document).on('click',".close-mark",function(event){
+    event.preventDefault();
+    showIndex();
+    hideCompanyInfo();
+});
 
-    getCompanyData(symbol);
-    indexContainer.hide("fast");
-    preloader.fadeIn();
-    companyInfoContainer.show("fast");
-    window.history.pushState({symbol: symbol}, symbol, "/" + symbol);
+function hideCompanyInfo(){
+    $('.companyInfo-container').removeClass('shown');
+    setTimeout(function(){
+        $('.companyInfo-container').hide();
+    }, 300);   
+}
+
+function showCompanyInfo(){
+    $('.preloader').fadeOut("fast");
+    $('.companyInfo-container').show();
+    $('.companyInfo-container').addClass("shown");
+}
+
+function hideIndex(){
+    $('.index-container').removeClass('shown');
+    setTimeout(function(){
+        $('.index-container').hide();
+    }, 300);
+}
+
+function showIndex(){ 
+    $('.index-container').show();
+    setTimeout(function(){
+        $('.index-container').addClass('shown');
+    }, 0);
 }
 
 getIndexData = function(symbols) {
@@ -55,7 +79,9 @@ getIndexData = function(symbols) {
                 var template = Handlebars.compile(source);
 
                 var html = template(results);
-                $('.index-container').append(html);
+                $('.index-container').html(html).delay(0).queue(function(){
+                    showIndex();
+                });
                 // console.log(results);
             }
         })
@@ -92,9 +118,9 @@ getCompanyData = function(symbol) {
                     var template = Handlebars.compile(source);
 
                     var html = template(results);
-                    $('.companyInfo-container').append(html);
+                    $('.companyInfo-container').html(html);
+                    showCompanyInfo();
                     // console.log(results);
-            
                 })
                 .fail(function (jqxhr, textStatus, error) {
                     var err = textStatus + ", " + error;
