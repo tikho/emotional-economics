@@ -65,6 +65,7 @@ getIndexData = function(symbols) {
 
             results = data.query.results.quote;
 
+            console.log(results);
             if (results.length == symbols.length){
 
                 results = results.sort(function(a,b){
@@ -110,7 +111,7 @@ getCompanyData = function(symbol) {
             var data = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + symbol + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
             
             $.getJSON(url, 'q=' + data + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env")
-                .done(function(historyData) {
+                .done(function(historyData) {   
 
                     $.extend(results, companyData.query.results.quote, historyData.query.results.quote);
 
@@ -170,6 +171,20 @@ Handlebars.registerHelper('change-sign', function() {
         return '⇊';
     } else{
         return '\u00A0'
+    }
+});
+
+Handlebars.registerHelper('history-change-class', function() {
+    var open = this.Open;
+    var close = this.Close;
+    var change = close - open;
+
+    if (change > 0){
+        return 'change-up';
+    } else if (change < 0){
+        return 'change-down';
+    } else{
+        return 'change-still'
     }
 });
 

@@ -1,22 +1,55 @@
 
 .history-image{
-/*	max-height: 25px;
-	max-width: 25px;
-	margin: 0;*/
+	max-height: 100px;
+	max-width: 100px;
+	position: absolute;
+}
+
+.history-image-info{
+	/*display: inline-block;*/
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	font-size: 80%;
+	line-height: 0.7em;
+	text-align: center;
+	background-color: black;
+	color: white;
+	width: 100px;
+	height: 100px;
+	margin: 0;
+	padding: 15px;
+	text-transform: uppercase;
+}
+
+.history-image-info:hover{
+	opacity: 1.0;
+}
+
+.history-image-container{
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 0;
+	margin-left: -5px;
 }
 
 .history-container{
 	width: 80%;
+	margin: 50px auto;
 }
 
 .compareImage-container {
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin: 50px auto;
     position: relative;
     height: 300px;
+    width: 80%;
+    text-align: center;
 }
 
 .compareImage-container img {
+	max-width: 40%;
     vertical-align: bottom;
 }
 
@@ -72,6 +105,14 @@ a:active{
 	border-bottom: 1px solid darkred;
 	padding-bottom:1px;
 	color: darkred;
+}
+
+a:focus{
+	text-decoration: none;
+	border-bottom: 1px solid red;
+	padding-bottom:1px;
+	color: red;
+	transition: color 0.0s, border-bottom 0.0s;
 }
 
 a:visited {

@@ -85,12 +85,21 @@
 
   <div class="history-container">
   {{#each this}}
-    <div class="col-xs-6 col-md-8">
-      {{#history-image}}{{/history-image}}
+    <div class="history-image-container">
+  <!--     <div class="history-images"> -->
+        <!-- <div class="col-xs-6 col-md-8"> -->
+          {{#history-image}}{{/history-image}}
+        <!-- </div> -->
+      <!-- </div> -->
+      <div class="history-image-info">      
+        <p>{{Date}}</p>
+        <p class="label">Open</p>
+          <p>{{Open}}</p>
+        <p class="label">Close</p>
+          <p class="{{history-change-class}}">{{Close}}</p>
+      </div>
     </div>
-    <div class="col-xs-6 col-md-4">
-      <p>Date:{{Date}}</p> <p>Open:{{Open}}</p> <p>Close:{{Close}}</p>
-    </div>
+
   {{/each}}
   </div>
 </div>
