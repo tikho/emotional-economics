@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var companiesSymbols = ['AAPL', 'FB', 'TSLA', 'USDRUB=X', 'BABA', 'GOOG', 'VA', 'USDEUR=X', 'AMZN', 'SBUX'];
+    var companiesSymbols = ['AAPL', 'FB', 'TSLA', 'RUB=X', 'BABA', 'GOOG', 'VA', 'EUR=X', 'AMZN', 'SBUX', 'YHOO'];
 
     getIndexData(companiesSymbols);
 
@@ -65,7 +65,6 @@ getIndexData = function(symbols) {
 
             results = data.query.results.quote;
 
-            console.log(results);
             if (results.length == symbols.length){
 
                 results = results.sort(function(a,b){
@@ -121,7 +120,7 @@ getCompanyData = function(symbol) {
                     var html = template(results);
                     $('.companyInfo-container').html(html);
                     showCompanyInfo();
-                    // console.log(results);
+                    console.log(results);
                 })
                 .fail(function (jqxhr, textStatus, error) {
                     var err = textStatus + ", " + error;
@@ -151,6 +150,7 @@ Handlebars.registerHelper('grouped_each', function(every, context, options) {
   return out;
 });
 
+
 Handlebars.registerHelper('image', function() {
     var change = this.Change;
     var symbol = this.Symbol;
@@ -160,6 +160,32 @@ Handlebars.registerHelper('image', function() {
     } else{
         return '<img src="img/' + symbol + "-sad.jpg" + '" ' + imgClass + '>';
     }
+});
+
+
+Handlebars.registerHelper('change', function() {
+    var change = this.Change;
+    if (change > 0){
+        return '+' + Math.round(change * 1000) / 1000;
+    } else
+        return Math.round(change * 1000) / 1000;
+});
+
+
+Handlebars.registerHelper('bid', function() {
+    var bid = this.Bid;
+    return Math.round(bid * 1000) / 1000;
+});
+
+Handlebars.registerHelper('open', function() {
+    var open = this.Open;
+    return Math.round(open * 1000) / 1000;
+});
+
+
+Handlebars.registerHelper('close', function() {
+    var close = this.Close;
+    return Math.round(close * 1000) / 1000;
 });
 
 
@@ -173,6 +199,7 @@ Handlebars.registerHelper('change-sign', function() {
         return '\u00A0'
     }
 });
+
 
 Handlebars.registerHelper('history-change-class', function() {
     var open = this.Open;
@@ -197,6 +224,11 @@ Handlebars.registerHelper('change-class', function() {
     } else{
         return 'change-still'
     }
+});
+
+Handlebars.registerHelper('normalized-date', function(){
+    var date = this.Date;
+    return moment(date, 'YYYY-MM-DD').format('MMM Do YY');
 });
 
 Handlebars.registerHelper('history-image', function(){

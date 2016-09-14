@@ -15,7 +15,7 @@
 <body>
 
   <div class="preloader">
-    <p class="preloader-text">#emotional<br/>economics</p>
+    <p class="preloader-text">#emotional economics</p>
   </div>
 
   <div class="index-container">
@@ -31,9 +31,9 @@
 <script id="index" type="text/x-handlebars-template">
     <div class="intro-container">
       <div class="intro-centered">
-        <h1 class="header">#emotional economics</h1>
+        <h1 class="header">#emotional<br/>economics</h1>
+        <h4 class="explainer-text">Every day companies stock quotes go up or down and every day company leaders feel good or bad about it</h4>
       </div>
-          <h4 class="explainer-text">Every day companies stock quotes go <span class="change-up">up&nbsp;⇈</span>&nbsp;or&nbsp;<span class="change-down">down&nbsp;⇊</span> and every day company leaders feel <span class="change-up">good&nbsp;;-)</span>&nbsp;or&nbsp;<span class="change-down">bad&nbsp;:-(</span> about it</h4>
     </div>
   <div class="container">
     {{#grouped_each 3 this}}
@@ -42,35 +42,36 @@
         <div class="col-md-4 companyInfo">
           <a class="block-link" href="{{Symbol}}">
             {{#image thumbnail}}{{/image}} 
+            <div class="col-xs-8 col-sm-6">
               <div class="block-link-text">
                 <h4 class="name">{{Name}}</h4>
-                <h6 class="symbol">#{{Symbol}}</h6>
+                <h6 class="symbol">{{Symbol}}</h6>
               </div>
+            </div>
           </a>
+          <div class="col-xs-4 col-sm-6">    
             <h4 class="bid">{{bid}} {{change-sign}}<span class={{change-class}}> {{change}}</span></h4>
             <h6 class="time">{{LastTradeTime}}</h6>
+          </div>
+
         </div>
         {{/each}}
       </div>
     {{/grouped_each}}
   </div>
 
-  <div class="footer">
+  <div class="outro container">
+    <h4>If you know any company with a leader worth appearing here — <a href="mailto:tikho@tikho.ru?subject=#emotional economics / submit company">get&nbspin&nbsptouch</a></h4>
+  </div>
 
-    <div class="outro">
-      <h4 class="outro-text">If you know any company with a leader worth appearing here — <a href="mailto:tikho@tikho.ru?subject=#emotional economics / submit company">get&nbsp;in&nbsp;touch</a></h4>
+  <div class="footer container">
+    <div class="sharing-block center-block">
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <!-- <div class="addthis_native_toolbox center-block"></div> -->
     </div>
-
-    <div class="container">
-      <div class="sharing-block center-block">
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <!-- <div class="addthis_native_toolbox center-block"></div> -->
-      </div>
-      <div class="made-by">
-        <h6>Made by <a class="made-by-link" href="http://www.tikho.ru">Ivan Tikhomirov</a><h6>
-      </div>
+    <div class="made-by">
+      <h6>Made by <a class="made-by-link" href="http://www.tikho.ru">Ivan Tikhomirov</a><h6>
     </div>
-
   </div>
 
 </script>

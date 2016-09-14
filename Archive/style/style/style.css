@@ -1,9 +1,5 @@
 
 
-body{
-	letter-spacing: 1px;
-	/*background-color: cyan;*/
-}
 
 .company-image-container{
 	text-align: right;
@@ -12,8 +8,8 @@ body{
 .company-image{
 	display: inline;
 	margin: 0;
-	max-width: 360px;
-	max-height: 360px;
+	max-width: 350px;
+	max-height: 350px;
 }
 
 .company-name{
@@ -81,29 +77,23 @@ body{
 	display: inline-block;
 	position: relative;
 	top: 2px;
-	margin-right: 6px;
-	margin-bottom: 0px;
 }
 
 .bid{
 	display: inline-block;
-	margin-right: 10px;
 }
 
 .time{
 	margin-top: -5px;
 	display: inline-block;
-	position: relative;
-	top: -2px;
-	/*text-transform: uppercase;*/
-	letter-spacing: 1px;
 }
 
 .symbol{
 	letter-spacing: 2px;
 	display: inline-block;
 	position: relative;
-	top: 0px;
+	top: -1px;
+	margin-left: 10px;
 	border: 1px solid;
 	padding: 2px;
 	padding-left: 3px;
@@ -235,51 +225,49 @@ a:visited:active {
 	font-weight: 100;
 }
 
-.explainer-text{
-	margin:0 auto;
-	margin-top: 30px;
-	padding-top: 3vh;
-	padding-bottom: 3vh;
-	line-height: 1.9em;
-	/*max-width: 550px;*/
-	text-align: center;
-	border-top: 2px solid;
-	border-bottom: 2px solid;
-	width: 90vw;
-}
-
 .intro-container{
-	margin: 0 auto;
-	color: black;
+	margin: 0;
+	/*height: 80vh;*/
+	padding-top: 12vh;
+	padding-bottom: 12vh;
+	/*background-color: black;*/
+	color: white;
 	text-align: center;
+/*	background-image: url(../img/background.jpg);
+	background-repeat: repeat;*/
 }
 
 .intro-centered{
 	margin: 0 auto;
-	padding-top: 18vh;
-	padding-bottom: 6vh;
+	/*height: 60vh;*/
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 12vh;
+	margin-bottom: 12vh;
 }
 
 .header{
-	display: inline-block;
-	text-align: left;
-	width: 70vw;
-	font-size: 8vw;
-	font-weight: bold;
-	font-style: italic;
-	line-height: 1.0em;
-	padding: 2vw;
-	padding-left: 4vw;
-	padding-right: 4vw;
-	border: 0.6vw solid;
-	text-transform: uppercase;
-	letter-spacing: 0.8vw;
-	/*white-space: nowrap;*/
+	margin: 0 auto;
+	font-size: 15vh;
+	line-height: 0.9em;
+	padding: 3vw;
+	border: 1px solid;
 }
 
 @media screen and (max-width: 660px) {
 
+	.header{
+		font-size: 50px;
+	}
 
+	.intro-container{
+		height: 60vh;
+	}
+
+	.intro-centered{
+		margin-top: 6vh;
+
+	}
 
 	.row{
 		margin-bottom: 0;
@@ -305,28 +293,30 @@ a:visited:active {
 
 }
 
+.explainer-text{
+	margin:0 auto;
+	margin-top: 30px;
+	padding-left: 3vh;
+	padding-right: 3vh;
+	line-height: 1.2em;
+	max-width: 550px
+}
+
 .footer{
 	text-align: center;
 	margin-bottom: 50px;
-	background-color: #FDF5E6;
 }
 
 .outro{
 	margin-top: 150px;
+	width: 90%;
 	margin-bottom: 100px;
 	text-align: center;
 	line-height: 1.5em;
-	border: 3px solid red;
-	display: inline-block;
+	padding: 50px;
+	border: 2vw solid red;
 }
 
-.outro-text{
-	color: red;
-	display: inline-block;
-	padding: 20px;
-	padding-left: 30px;
-	padding-right: 30px;
-}
 
 .preloader{
 	display: none;
@@ -344,8 +334,6 @@ a:visited:active {
 	font-size: 3vw;
 	font-weight: bold;
 
-	text-transform: uppercase;
-	letter-spacing: 4px;
 
 	color: #F37866;
 
